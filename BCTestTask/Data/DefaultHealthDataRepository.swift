@@ -29,9 +29,12 @@ final class DefaultHealthDataRepository: HealthDataRepository {
 
 extension DefaultHealthDataRepository {
     private func requestHealthKitPermission() async throws {
-        guard HKHealthStore.isHealthDataAvailable(), let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
-            // TODO: throw error
-            return
+        guard HKHealthStore.isHealthDataAvailable() else {
+            throw HealthDataRepositoryError.healthDataUnavailable
+        }
+        
+        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
+            throw HealthDataRepositoryError.stepCountUnavailable
         }
         
         do {
@@ -42,11 +45,13 @@ extension DefaultHealthDataRepository {
     }
     
     private func queryStepsData() async throws -> [StepsData] {
-        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount),
-              let startOfWeek = Calendar.current.date(from: Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: .now)),
+        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
+            throw HealthDataRepositoryError.stepCountUnavailable
+        }
+                                                              
+        guard let startOfWeek = Calendar.current.date(from: Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: .now)),
               let endOfWeek = Calendar.current.date(byAdding: .day, value: 6, to: startOfWeek) else {
-            // TODO: throw error
-            return []
+            throw HealthDataRepositoryError.setup
         }
         
         let predicate = HKQuery.predicateForSamples(withStart: startOfWeek, end: endOfWeek, options: .strictStartDate)
@@ -67,8 +72,7 @@ extension DefaultHealthDataRepository {
                 }
                 
                 guard let results else {
-                    // TODO: throw error
-                    continuation.resume(returning: [])
+                    continuation.resume(throwing: HealthDataRepositoryError.noStepCountData)
                     return
                 }
                 

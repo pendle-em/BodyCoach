@@ -35,6 +35,11 @@ extension MainView: View {
             }
         }
         .background(Color.cobalt_500_white_0)
+        .alert("Error", isPresented: $viewModel.showAlert, actions: {
+            Button("OK", role: .cancel) {}
+        }, message: {
+            Text(viewModel.errorMessage)
+        })
     }
     
     private var header: some View {
@@ -72,10 +77,16 @@ extension MainView: View {
     private func content(geometry: GeometryProxy) -> some View {
         VStack {
             description
-            Carousel(
-                width: geometry.size.width,
-                cellViewModels: $viewModel.cellViewModels
-            )
+            if viewModel.isLoading {
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .tint(Color.cobalt_50_550)
+            } else {
+                Carousel(
+                    width: geometry.size.width,
+                    cellViewModels: $viewModel.cellViewModels
+                )
+            }
         }
         .padding(.bottom, pinnedContentHeight)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
