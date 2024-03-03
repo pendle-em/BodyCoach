@@ -23,6 +23,7 @@
 		B2E86A2E2B94B2FA00CEB9C9 /* StepCountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A2D2B94B2F900CEB9C9 /* StepCountCell.swift */; };
 		B2E86A312B94B31000CEB9C9 /* StepCountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A302B94B31000CEB9C9 /* StepCountCellViewModel.swift */; };
 		B2E86A332B94B46A00CEB9C9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A322B94B46A00CEB9C9 /* MainViewModel.swift */; };
+		B2E86A352B94BEB500CEB9C9 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A342B94BEB500CEB9C9 /* CarouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B2E86A2D2B94B2F900CEB9C9 /* StepCountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountCell.swift; sourceTree = "<group>"; };
 		B2E86A302B94B31000CEB9C9 /* StepCountCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountCellViewModel.swift; sourceTree = "<group>"; };
 		B2E86A322B94B46A00CEB9C9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		B2E86A342B94BEB500CEB9C9 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				A5354B992B86568800FE684B /* MainView.swift */,
 				A56168322B8CE80100E33784 /* ButtonTitleView.swift */,
 				B2E86A2D2B94B2F900CEB9C9 /* StepCountCell.swift */,
+				B2E86A342B94BEB500CEB9C9 /* CarouselView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				B2E86A332B94B46A00CEB9C9 /* MainViewModel.swift in Sources */,
 				A5796A832B8B8BEA006C6B81 /* BoundsChangeObserver.swift in Sources */,
 				A561682B2B8CE68A00E33784 /* CapsuleButtonStyle.swift in Sources */,
+				B2E86A352B94BEB500CEB9C9 /* CarouselView.swift in Sources */,
 				A561682F2B8CE6C700E33784 /* ButtonSize.swift in Sources */,
 				A5796A812B8B84AE006C6B81 /* SCurve.swift in Sources */,
 				A561682D2B8CE6AE00E33784 /* ButtonStyling.swift in Sources */,

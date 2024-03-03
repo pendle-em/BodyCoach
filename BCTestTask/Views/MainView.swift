@@ -19,12 +19,7 @@ extension MainView: View {
                 ScrollView {
                     VStack(spacing: 0) {
                         header
-                        content
-                            .padding(.bottom, pinnedContentHeight)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                            .background(Color.cobalt_50_550
-                                .clipShape(TopSCurve())
-                                .padding(.bottom, -geometry.safeAreaInsets.bottom))
+                        content(geometry: geometry)
                     }
                     .frame(
                         idealWidth: geometry.size.width,
@@ -35,14 +30,14 @@ extension MainView: View {
                 }
                 .frame(width: geometry.size.width)
                 
-                pinned
+                pinnedButton
                     .anchorBounds(key: "pinned-content")
             }
         }
         .background(Color.cobalt_500_white_0)
     }
     
-    var header: some View {
+    private var header: some View {
         Text(viewModel.title)
             .foregroundStyle(Color.cobalt_50_550)
             .font(.largeTitle)
@@ -50,31 +45,50 @@ extension MainView: View {
             .padding(.vertical, 32)
     }
     
-    var content: some View {
-        VStack {
-            Text(viewModel.description)
-                .font(.body)
-                .padding(.top, 32)
-                .foregroundStyle(Color.cobalt_500_white_0)
-            HStack(spacing: 10) {
-                ForEach(viewModel.cellViewModels) { cellViewModel in
-                    StepCountCell(viewModel: cellViewModel)
-                }
-            }
-        }
-        .padding(12)
+    private var description: some View {
+        Text(viewModel.description)
+            .font(.body)
+            .padding(.top, 32)
+            .foregroundStyle(Color.cobalt_500_white_0)
     }
     
-    var contentBackground: some View {
+    private var contentBackground: some View {
         Color.cobalt_50_550
     }
-    
-    var pinned: some View {
-        Button(action: viewModel.fetchStepsData) {
+
+    private var pinnedButton: some View {
+        Button(action: {
+            Task {
+                viewModel.fetchStepsData()
+            }
+        }, label: {
             ButtonTitleView(viewModel.buttonTitle)
-        }
+        })
         .buttonStyle(CapsuleButtonStyle(.cobaltWhite))
         .comfortableReadingWidth()
         .padding(.horizontal, DesignConstants.gutterNarrow)
     }
+    
+    private func content(geometry: GeometryProxy) -> some View {
+        VStack {
+            description
+            Carousel(
+                width: geometry.size.width,
+                cellViewModels: $viewModel.cellViewModels
+            )
+        }
+        .padding(.bottom, pinnedContentHeight)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(
+            Color.cobalt_50_550
+                .clipShape(TopSCurve())
+                .padding(.bottom, -geometry.safeAreaInsets.bottom)
+        )
+    }
 }
+
+//struct MainView_Preview: PreviewProvider {
+//    static var previews: some View {
+//        MainView(viewModel: MainViewModel())
+//    }
+//}
