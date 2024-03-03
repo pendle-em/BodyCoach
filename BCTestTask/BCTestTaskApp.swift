@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct BCTestTaskApp: App {
+    let healthDataRepository: HealthDataRepository
     let mainViewModel: MainViewModel
     
     init() {
-        self.mainViewModel = MainViewModel()
+        self.healthDataRepository = DefaultHealthDataRepository()
+        self.mainViewModel = MainViewModel(repository: healthDataRepository)
     }
     
     var body: some Scene {

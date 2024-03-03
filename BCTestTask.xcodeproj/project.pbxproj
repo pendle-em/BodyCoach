@@ -24,6 +24,11 @@
 		B2E86A312B94B31000CEB9C9 /* StepCountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A302B94B31000CEB9C9 /* StepCountCellViewModel.swift */; };
 		B2E86A332B94B46A00CEB9C9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A322B94B46A00CEB9C9 /* MainViewModel.swift */; };
 		B2E86A352B94BEB500CEB9C9 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A342B94BEB500CEB9C9 /* CarouselView.swift */; };
+		B2E86A382B94C12400CEB9C9 /* HealthDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A372B94C12400CEB9C9 /* HealthDataRepository.swift */; };
+		B2E86A3A2B94C13400CEB9C9 /* DefaultHealthDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A392B94C13400CEB9C9 /* DefaultHealthDataRepository.swift */; };
+		B2E86A3C2B94C15500CEB9C9 /* StepsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A3B2B94C15500CEB9C9 /* StepsData.swift */; };
+		B2E86A402B94C68100CEB9C9 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A3F2B94C68100CEB9C9 /* Int+Extensions.swift */; };
+		B2E86A422B94C68F00CEB9C9 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A412B94C68F00CEB9C9 /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,12 @@
 		B2E86A302B94B31000CEB9C9 /* StepCountCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountCellViewModel.swift; sourceTree = "<group>"; };
 		B2E86A322B94B46A00CEB9C9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B2E86A342B94BEB500CEB9C9 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		B2E86A372B94C12400CEB9C9 /* HealthDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataRepository.swift; sourceTree = "<group>"; };
+		B2E86A392B94C13400CEB9C9 /* DefaultHealthDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHealthDataRepository.swift; sourceTree = "<group>"; };
+		B2E86A3B2B94C15500CEB9C9 /* StepsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsData.swift; sourceTree = "<group>"; };
+		B2E86A3D2B94C4C300CEB9C9 /* BCTestTask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BCTestTask.entitlements; sourceTree = "<group>"; };
+		B2E86A3F2B94C68100CEB9C9 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		B2E86A412B94C68F00CEB9C9 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +89,9 @@
 		A5354B962B86568800FE684B /* BCTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				B2E86A3E2B94C67100CEB9C9 /* Extensions */,
+				B2E86A3D2B94C4C300CEB9C9 /* BCTestTask.entitlements */,
+				B2E86A362B94C11400CEB9C9 /* Data */,
 				A56168382B8CEA0100E33784 /* Info.plist */,
 				A5354B972B86568800FE684B /* BCTestTaskApp.swift */,
 				A5354B9B2B86568C00FE684B /* Assets.xcassets */,
@@ -130,6 +144,25 @@
 				B2E86A322B94B46A00CEB9C9 /* MainViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B2E86A362B94C11400CEB9C9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B2E86A372B94C12400CEB9C9 /* HealthDataRepository.swift */,
+				B2E86A392B94C13400CEB9C9 /* DefaultHealthDataRepository.swift */,
+				B2E86A3B2B94C15500CEB9C9 /* StepsData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B2E86A3E2B94C67100CEB9C9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B2E86A3F2B94C68100CEB9C9 /* Int+Extensions.swift */,
+				B2E86A412B94C68F00CEB9C9 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,14 +236,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2E86A312B94B31000CEB9C9 /* StepCountCellViewModel.swift in Sources */,
+				B2E86A402B94C68100CEB9C9 /* Int+Extensions.swift in Sources */,
 				A5354BAE2B86662800FE684B /* Colours.swift in Sources */,
 				A5354B9A2B86568800FE684B /* MainView.swift in Sources */,
 				A56168332B8CE80100E33784 /* ButtonTitleView.swift in Sources */,
 				B2E86A2E2B94B2FA00CEB9C9 /* StepCountCell.swift in Sources */,
+				B2E86A382B94C12400CEB9C9 /* HealthDataRepository.swift in Sources */,
+				B2E86A3A2B94C13400CEB9C9 /* DefaultHealthDataRepository.swift in Sources */,
+				B2E86A3C2B94C15500CEB9C9 /* StepsData.swift in Sources */,
 				A56168312B8CE77400E33784 /* DesignConstants.swift in Sources */,
 				A56168352B8CE85E00E33784 /* ComfortableReadingWidth.swift in Sources */,
 				B2E86A332B94B46A00CEB9C9 /* MainViewModel.swift in Sources */,
 				A5796A832B8B8BEA006C6B81 /* BoundsChangeObserver.swift in Sources */,
+				B2E86A422B94C68F00CEB9C9 /* Date+Extensions.swift in Sources */,
 				A561682B2B8CE68A00E33784 /* CapsuleButtonStyle.swift in Sources */,
 				B2E86A352B94BEB500CEB9C9 /* CarouselView.swift in Sources */,
 				A561682F2B8CE6C700E33784 /* ButtonSize.swift in Sources */,
@@ -347,13 +385,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BCTestTask/BCTestTask.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BCTestTask/Preview Content\"";
-				DEVELOPMENT_TEAM = 7752TQQXG7;
+				DEVELOPMENT_TEAM = Y9ZZ2898LM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BCTestTask/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app uses your step count data to help you track your weekly steps";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -364,7 +404,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.thebodycoach.ios-test-task";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emmapendlebury.ios-test-task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -380,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BCTestTask/BCTestTask.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BCTestTask/Preview Content\"";
@@ -387,6 +428,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BCTestTask/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app uses your step count data to help you track your weekly steps";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

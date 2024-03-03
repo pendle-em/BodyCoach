@@ -12,8 +12,8 @@ struct StepCountCellViewModel: Identifiable {
     let day: Int
     let steps: String
     
-    init(date: Date, steps: Int) { // TODO
-        self.day = 15
-        self.steps = "12,342"
+    init(date: Date, steps: Int) {
+        self.day = date.dayNumber
+        self.steps = steps.formattedWithCommas
     }
 }

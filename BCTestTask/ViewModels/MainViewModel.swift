@@ -14,19 +14,23 @@ final class MainViewModel: ObservableObject {
     @Published var cellViewModels: [StepCountCellViewModel] = []
     @Published var description: String = "No data yet!"
     
-    func fetchStepsData() {
-        let stepsData = [
-            StepsData(date: .now, count: 1631),
-            StepsData(date: .now, count: 24237),
-            StepsData(date: .now, count: 1234),
-            StepsData(date: .now, count: 0),
-            StepsData(date: .now, count: 5697),
-            StepsData(date: .now, count: 10231),
-            StepsData(date: .now, count: 490)
-        ]
-        
-        updateCellViewModels(with: stepsData)
-        description = "This weeks data"
+    private let repository: HealthDataRepository
+    
+    init(repository: HealthDataRepository) {
+        self.repository = repository
+    }
+    
+    @MainActor
+    func fetchStepsData() async throws {
+        do {
+            description = "Fetching..."
+            
+            let stepsData = try await repository.fetchData()
+            updateCellViewModels(with: stepsData)
+            description = "This weeks data"
+        } catch {
+            description = "No data yet!"
+        }
     }
 }
 
@@ -39,9 +43,4 @@ extension MainViewModel {
             )
         }
     }
-}
-
-struct StepsData { // TODO: move
-    let date: Date
-    let count: Int
 }

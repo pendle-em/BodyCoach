@@ -59,7 +59,7 @@ extension MainView: View {
     private var pinnedButton: some View {
         Button(action: {
             Task {
-                viewModel.fetchStepsData()
+                try await viewModel.fetchStepsData()
             }
         }, label: {
             ButtonTitleView(viewModel.buttonTitle)
