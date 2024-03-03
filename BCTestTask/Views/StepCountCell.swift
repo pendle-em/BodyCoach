@@ -15,15 +15,15 @@ extension StepCountCell {
     var body: some View {
         textStack
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 10)
-            .padding(.horizontal, 2)
+            .padding(.vertical, DesignConstants.StepCountCell.largeSpacing)
+            .padding(.horizontal, DesignConstants.StepCountCell.smallSpacing)
             .foregroundStyle(Color.cobalt_50_550)
             .background(Color.cobalt_500_1000)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .clipShape(RoundedRectangle(cornerRadius: DesignConstants.StepCountCell.largeSpacing))
     }
     
     private var textStack: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: DesignConstants.StepCountCell.largeSpacing) {
             Text(viewModel.day.description)
                 .font(.title3)
             Text(viewModel.steps)

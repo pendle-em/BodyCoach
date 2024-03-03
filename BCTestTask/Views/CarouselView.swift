@@ -31,13 +31,13 @@ extension Carousel {
     }
     
     private var cellStack: some View {
-        return HStack(spacing: 8) {
+        return HStack(spacing: DesignConstants.Carousel.spacing) {
             ForEach(cellViewModels) { cellViewModel in
                 StepCountCell(viewModel: cellViewModel)
                     .frame(minWidth: minCellWidth)
             }
         }
-        .padding(14)
+        .padding(DesignConstants.Carousel.spacing)
     }
 }
 
@@ -45,7 +45,7 @@ extension Carousel {
     private var minCellWidth: CGFloat {
         let numberOfCells = CGFloat(cellViewModels.count)
         let numberOfSpaces = numberOfCells - 1
-        let totalSpacing = (14 * 2) + (8 * numberOfSpaces)
+        let totalSpacing = (DesignConstants.Carousel.padding * 2) + (DesignConstants.Carousel.spacing * numberOfSpaces)
         return (width - totalSpacing) / numberOfCells
     }
 }

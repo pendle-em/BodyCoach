@@ -47,13 +47,13 @@ extension MainView: View {
             .foregroundStyle(Color.cobalt_50_550)
             .font(.largeTitle)
             .multilineTextAlignment(.center)
-            .padding(.vertical, 32)
+            .padding(.vertical, DesignConstants.padding)
     }
     
     private var description: some View {
         Text(viewModel.description)
             .font(.body)
-            .padding(.top, 32)
+            .padding(.top, DesignConstants.padding)
             .foregroundStyle(Color.cobalt_500_white_0)
     }
     
@@ -80,7 +80,7 @@ extension MainView: View {
             if viewModel.isLoading {
                 ProgressView()
                     .progressViewStyle(.circular)
-                    .tint(Color.cobalt_50_550)
+                    .foregroundStyle(Color.cobalt_50_550)
             } else {
                 Carousel(
                     width: geometry.size.width,
