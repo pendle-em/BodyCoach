@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct BCTestTaskApp: App {
+    let mainViewModel: MainViewModel
+    
+    init() {
+        self.mainViewModel = MainViewModel()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(viewModel: mainViewModel)
         }
     }
 }

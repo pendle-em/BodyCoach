@@ -20,6 +20,9 @@
 		A56168352B8CE85E00E33784 /* ComfortableReadingWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56168342B8CE85E00E33784 /* ComfortableReadingWidth.swift */; };
 		A5796A812B8B84AE006C6B81 /* SCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5796A802B8B84AE006C6B81 /* SCurve.swift */; };
 		A5796A832B8B8BEA006C6B81 /* BoundsChangeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5796A822B8B8BEA006C6B81 /* BoundsChangeObserver.swift */; };
+		B2E86A2E2B94B2FA00CEB9C9 /* StepCountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A2D2B94B2F900CEB9C9 /* StepCountCell.swift */; };
+		B2E86A312B94B31000CEB9C9 /* StepCountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A302B94B31000CEB9C9 /* StepCountCellViewModel.swift */; };
+		B2E86A332B94B46A00CEB9C9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E86A322B94B46A00CEB9C9 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		A56168382B8CEA0100E33784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A5796A802B8B84AE006C6B81 /* SCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCurve.swift; sourceTree = "<group>"; };
 		A5796A822B8B8BEA006C6B81 /* BoundsChangeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundsChangeObserver.swift; sourceTree = "<group>"; };
+		B2E86A2D2B94B2F900CEB9C9 /* StepCountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountCell.swift; sourceTree = "<group>"; };
+		B2E86A302B94B31000CEB9C9 /* StepCountCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountCellViewModel.swift; sourceTree = "<group>"; };
+		B2E86A322B94B46A00CEB9C9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,11 +77,12 @@
 			isa = PBXGroup;
 			children = (
 				A56168382B8CEA0100E33784 /* Info.plist */,
-				A5354BA82B8664AF00FE684B /* Design */,
-				A5354BA52B865A0600FE684B /* Views */,
 				A5354B972B86568800FE684B /* BCTestTaskApp.swift */,
 				A5354B9B2B86568C00FE684B /* Assets.xcassets */,
+				A5354BA82B8664AF00FE684B /* Design */,
 				A5354B9D2B86568C00FE684B /* Preview Content */,
+				B2E86A2F2B94B2FF00CEB9C9 /* ViewModels */,
+				A5354BA52B865A0600FE684B /* Views */,
 			);
 			path = BCTestTask;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 			children = (
 				A5354B992B86568800FE684B /* MainView.swift */,
 				A56168322B8CE80100E33784 /* ButtonTitleView.swift */,
+				B2E86A2D2B94B2F900CEB9C9 /* StepCountCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +118,15 @@
 				A56168342B8CE85E00E33784 /* ComfortableReadingWidth.swift */,
 			);
 			path = Design;
+			sourceTree = "<group>";
+		};
+		B2E86A2F2B94B2FF00CEB9C9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B2E86A302B94B31000CEB9C9 /* StepCountCellViewModel.swift */,
+				B2E86A322B94B46A00CEB9C9 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,11 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E86A312B94B31000CEB9C9 /* StepCountCellViewModel.swift in Sources */,
 				A5354BAE2B86662800FE684B /* Colours.swift in Sources */,
 				A5354B9A2B86568800FE684B /* MainView.swift in Sources */,
 				A56168332B8CE80100E33784 /* ButtonTitleView.swift in Sources */,
+				B2E86A2E2B94B2FA00CEB9C9 /* StepCountCell.swift in Sources */,
 				A56168312B8CE77400E33784 /* DesignConstants.swift in Sources */,
 				A56168352B8CE85E00E33784 /* ComfortableReadingWidth.swift in Sources */,
+				B2E86A332B94B46A00CEB9C9 /* MainViewModel.swift in Sources */,
 				A5796A832B8B8BEA006C6B81 /* BoundsChangeObserver.swift in Sources */,
 				A561682B2B8CE68A00E33784 /* CapsuleButtonStyle.swift in Sources */,
 				A561682F2B8CE6C700E33784 /* ButtonSize.swift in Sources */,

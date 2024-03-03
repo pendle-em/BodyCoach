@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct MainView {
+    @ObservedObject var viewModel: MainViewModel
     @State private var pinnedContentHeight: CGFloat = 0
-
-    func buttonAction() {
-        print("Load data")
-    }
 }
 
 extension MainView: View {
@@ -46,7 +43,7 @@ extension MainView: View {
     }
     
     var header: some View {
-        Text("The Body Coach\nTest Task")
+        Text(viewModel.title)
             .foregroundStyle(Color.cobalt_50_550)
             .font(.largeTitle)
             .multilineTextAlignment(.center)
@@ -54,19 +51,27 @@ extension MainView: View {
     }
     
     var content: some View {
-        Text("Display Content Here")
-            .font(.body)
-            .padding(.top, 32)
-            .foregroundStyle(Color.cobalt_500_white_0)
+        VStack {
+            Text(viewModel.description)
+                .font(.body)
+                .padding(.top, 32)
+                .foregroundStyle(Color.cobalt_500_white_0)
+            HStack(spacing: 10) {
+                ForEach(viewModel.cellViewModels) { cellViewModel in
+                    StepCountCell(viewModel: cellViewModel)
+                }
+            }
+        }
+        .padding(12)
     }
     
     var contentBackground: some View {
         Color.cobalt_50_550
     }
-
+    
     var pinned: some View {
-        Button(action: buttonAction) {
-            ButtonTitleView("Load Data")
+        Button(action: viewModel.fetchStepsData) {
+            ButtonTitleView(viewModel.buttonTitle)
         }
         .buttonStyle(CapsuleButtonStyle(.cobaltWhite))
         .comfortableReadingWidth()
